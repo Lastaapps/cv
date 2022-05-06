@@ -1,0 +1,3 @@
+# CV App
+
+This app has been developed as a simple showcase a little bit of my skills. But it is really simple, so it shows nothing. However, if you send someone CV in .apk form instead of .pdf, you can become more interesting for them. I hope...
