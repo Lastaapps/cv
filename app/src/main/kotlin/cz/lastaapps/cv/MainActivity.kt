@@ -3,9 +3,12 @@ package cz.lastaapps.cv
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import cz.lastaapps.cv.ui.About
+import cz.lastaapps.cv.ui.AppLayout
+import cz.lastaapps.cv.ui.Details
+import cz.lastaapps.cv.ui.Title
 import cz.lastaapps.cv.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,9 +20,18 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             AppTheme {
-                Box {
-                    Text("Hello, CV")
-                }
+                AppLayout(
+                    activity = this,
+                    main = {
+                        Column() {
+                            Title()
+                            About()
+                        }
+                    },
+                    side = {
+                        Details()
+                    },
+                )
             }
         }
     }
