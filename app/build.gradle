@@ -18,11 +18,18 @@ android {
             useSupportLibrary true
         }
         multiDexEnabled = true
+
+        buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
     }
 
     buildTypes {
-        release {
+        debug {
+            applicationIdSuffix = ".debug"
             minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

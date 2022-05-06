@@ -3,12 +3,10 @@ package cz.lastaapps.cv
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import cz.lastaapps.cv.ui.About
-import cz.lastaapps.cv.ui.AppLayout
-import cz.lastaapps.cv.ui.Details
-import cz.lastaapps.cv.ui.Title
+import cz.lastaapps.cv.ui.*
 import cz.lastaapps.cv.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,15 +20,10 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 AppLayout(
                     activity = this,
-                    main = {
-                        Column() {
-                            Title()
-                            About()
-                        }
-                    },
-                    side = {
-                        Details()
-                    },
+                    title = { Title() },
+                    main = { About() },
+                    side = { Details() },
+                    author = { Author(Modifier.fillMaxWidth()) },
                 )
             }
         }
